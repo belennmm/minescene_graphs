@@ -780,9 +780,7 @@ impl OptimizedDiorama {
         }
 
         if forest_zone {
-            //if y_level == max_height && ((x + 2*z) % 7 == 0 || (x + z) % 11 == 0) {
-             //   return Material::stone_layer();
-            //}
+            
             if y_level == max_height { return Material::grass_top(); }
             if y_level >= max_height - 1 { return Material::dirt_layer(); }
             return Material::stone_layer();
