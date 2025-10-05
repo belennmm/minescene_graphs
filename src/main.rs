@@ -735,7 +735,7 @@ impl OptimizedDiorama {
 
     
         
-    // determinar el material , AGUa etc
+    // determinar el material , AGUa, lava, etc para cada scene
     fn determine_material(x: usize, z: usize, y_level: usize, max_height: usize) -> Material {
         let lava_zone = x < 6;
         let sand_zone = x >= 6 && x < 12;
@@ -767,7 +767,7 @@ impl OptimizedDiorama {
             if Self::in_oasis(x, z) && y_level == 1 || y_level == 2 {
                 return Material::water_surface();
             }
-            // la sand
+            // para la sand
             if y_level == max_height { return Material::sand_top(); }
             return Material::stone_layer();
         }
