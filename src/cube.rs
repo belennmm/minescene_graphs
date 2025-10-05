@@ -10,6 +10,7 @@ pub struct Cube {
 
 impl Cube {
     pub fn new(center: Vec3, size: f32, material: Material) -> Self {
+
         let half_size = size / 2.0;
         Cube {
             min: Vec3::new(
@@ -90,7 +91,7 @@ impl Cube {
         let size = self.max - self.min;
         let p = point - center;
         
-        // Determinar qué cara fue golpeada basándose en cuál componente es mayor
+        // decir  qué cara fue golpeada , se basa  en cuál componente es mayor
         let abs_x = (p.x / (size.x * 0.5)).abs();
         let abs_y = (p.y / (size.y * 0.5)).abs();
         let abs_z = (p.z / (size.z * 0.5)).abs();
